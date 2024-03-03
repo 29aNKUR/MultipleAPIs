@@ -3,6 +3,18 @@ import React, { useEffect, useState } from "react";
 const Books = () => {
   const [books, setBooks] = useState([]);
 
+  const user1 = {
+    username: "ankur",
+    followers: 0
+  };
+
+  const user2 = user1;
+  user2.followers = user1.followers++;
+
+  console.log(user1.followers, "user1")
+  console.log(user2.followers, "user2")
+
+
   const handleFetch = async () => {
     try {
       const data = await fetch("https://anapioficeandfire.com/api/books");
